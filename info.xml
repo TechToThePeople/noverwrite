@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<extension key="eu.tttp.noverwrite" type="module">
+  <file>noverwrite</file>
+  <name>Stop people (eg. staff) overriding their record while trying to add a new contact</name>
+  <description>Civi by default pre-select your own contact details when you register to an event (or other public visible forms) if you are registered. It is generally a good thing, but might lead to errors where team members will overwrite their own contact record, or if one forward an invitation they received to someone else.</description>
+  <license>agpl</license>
+  <maintainer>
+    <author>Stoob (and packaged by xavier)</author>
+    <email>xavier@tttp.eu</email>
+  </maintainer>
+  <releaseDate>2013-05-06</releaseDate>
+  <version>1.0</version>
+  <develStage>stable</develStage>
+  <compatibility>
+    <ver>4.2</ver>
+    <ver>4.3</ver>
+  </compatibility>
+  <civix>
+    <namespace>CRM/Noverwrite</namespace>
+  </civix>
+</extension>

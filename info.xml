@@ -21,4 +21,6 @@ This extension put the first and last name fields read only, to prevent these mi
   <civix>
     <namespace>CRM/Noverwrite</namespace>
   </civix>
+<urls><url desc="Main Extension Page">http://github.com/TechToThePeople/noverwrite</url><url desc="Documentation">http://github.com/TechToThePeople/noverwrite</url><url desc="Support">http://forum.civicrm.org</url><url desc="Licensing">http://civicrm.org/licensing</url></urls>
+
 </extension>

@@ -7,7 +7,7 @@ function noverwrite_civicrm_buildForm ( $formName, &$form ){
   if (!$form->getVar( '_userID' )) {
     return; // anonymous user, nothing to bloc
   }
-  foreach (array( 'first_name', 'last_name','billing_first_name','billing_last_name' ) as $f) {
+  foreach (array( 'first_name', 'last_name') as $f) {
     if (!$form->elementExists($f)) {
       continue;
     }

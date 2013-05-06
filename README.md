@@ -10,6 +10,3 @@ Based on an idea and initial code from Stoob.
 #installation#
 Download/git clone in your extension folder, enable the extension. 
 
-#limitation#
-
-The user needs javascript enabled, so don't use it as a security mesure, just as a help to avoid common errors.

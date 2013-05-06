@@ -11,7 +11,7 @@ This extension put the first and last name fields read only, to prevent these mi
     <email>xavier@tttp.eu</email>
   </maintainer>
   <releaseDate>2013-05-06</releaseDate>
-  <version>1.0</version>
+  <version>1.1</version>
   <develStage>stable</develStage>
   <compatibility>
     <ver>4.2</ver>

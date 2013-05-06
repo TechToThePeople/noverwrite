@@ -4,12 +4,19 @@ require_once 'noverwrite.civix.php';
 
 function noverwrite_civicrm_buildForm ( $formName, &$form ){
   $names = array ("CRM_Profile_Form_Edit","CRM_Contact_Form_Contact","CRM_Event_Form_Registration_Register","CRM_Contribute_Form_Contribution_Main");
-  if (in_array($formName,$names)) {
-  // if you want to bloc it at the js level only, uncomment the next line and comment the freeze
-  // CRM_Core_Resources::singleton()->addScript(file_get_contents(dirname( __FILE__ ) ."/js/noverwrite.js"));
-  $form->freeze( array( 'first_name', 'last_name' ) );
-
+  if (!$form->getVar( '_userID' )) {
+    return; // anonymous user, nothing to bloc
   }
+  foreach (array( 'first_name', 'last_name','billing_first_name','billing_last_name' ) as $f) {
+    if (!$form->elementExists($f)) {
+      continue;
+    }
+    $field=$form->getElement($f);
+    if ($field && $field->_attributes["value"])
+      $form->freeze( $f );
+  }
+  // if you want to bloc it at the js level only, uncomment the next line and comment out the freeze
+  // CRM_Core_Resources::singleton()->addScript(file_get_contents(dirname( __FILE__ ) ."/js/noverwrite.js"));
 }
 
 /**

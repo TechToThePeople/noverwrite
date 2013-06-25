@@ -6,7 +6,7 @@ function noverwrite_civicrm_buildForm ( $formName, &$form ){
   $names = array ("CRM_Profile_Form_Edit","CRM_Contact_Form_Contact","CRM_Event_Form_Registration_Register","CRM_Contribute_Form_Contribution_Main");
 
   $session = CRM_Core_Session::singleton();
-  if (!$session->get('userID')) {
+  if (!$session->get('userID') && !array_key_exists("cs",$_GET)) {
     return; // anonymous user, nothing to bloc
   }
   foreach (array( 'first_name', 'last_name') as $f) {

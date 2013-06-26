@@ -5,6 +5,8 @@ require_once 'noverwrite.civix.php';
 function noverwrite_civicrm_buildForm ( $formName, &$form ){
   $names = array ("CRM_Profile_Form_Edit","CRM_Event_Form_Registration_Register","CRM_Contribute_Form_Contribution_Main");
 
+  if (!in_array ($formName, $names))
+    return;
   $session = CRM_Core_Session::singleton();
   if (!$session->get('userID') && !array_key_exists("cs",$_GET)) {
     return; // anonymous user, nothing to bloc

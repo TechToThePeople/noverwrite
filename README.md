@@ -7,9 +7,9 @@ This extension put the first and last name fields read only, to prevent these mi
   
 Based on an idea and initial code from Stoob. 
 
-#does it work with contacts not logged in but that use checksum?#
+###does it work with contacts not logged in but that use checksum?###
 yes
 
-#installation#
+###installation###
 Download/git clone in your extension folder, enable the extension. or directly from the extension list in your civicrm
 

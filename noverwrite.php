@@ -11,12 +11,32 @@ function noverwrite_civicrm_buildForm ( $formName, &$form ){
   if (!$session->get('userID') && !array_key_exists("cs",$_GET)) {
     return; // anonymous user, nothing to bloc
   }
+  // Get the currently logged in user's first and last name so we can see if
+  // there name is being replaced (we don't want to freeze the fields if they
+  // are editing another user and need to overwrite the first/last name).
+  $session = &CRM_Core_Session::singleton();
+  $contactID = $session->get('userID');
+  if ($contactID) {
+    $params = array('contact_id' => $contactID,
+      'return.first_name' => 1,
+      'return.last_name' => 1,
+    );
+    try {
+      $user = civicrm_api3('contact', 'get', $params);
+    }
+    catch  (API_Exception $e) {
+      $user = NULL;
+    }
+    if($user) {
+      $user = array_pop($user['values']);
+    }
+  }
   foreach (array( 'first_name', 'last_name') as $f) {
     if (!$form->elementExists($f)) {
       continue;
     }
-    $field=$form->getElement($f);
-    if ($field && $field->_attributes["value"])
+    $field = $form->getElement($f);
+    if ($field && $field->_attributes["value"] && $field->_attributes["value"] == $user[$f])
       $form->freeze( $f );
   }
   // if you want to bloc it at the js level only, uncomment the next line and comment out the freeze

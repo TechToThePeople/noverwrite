@@ -10,13 +10,14 @@ This extension put the first and last name fields read only, to prevent these mi
     <author>Stoob (and packaged by xavier)</author>
     <email>xavier@tttp.eu</email>
   </maintainer>
-  <releaseDate>2013-05-25</releaseDate>
-  <version>1.21</version>
+  <releaseDate>2014-04-21</releaseDate>
+  <version>1.22</version>
   <develStage>stable</develStage>
   <compatibility>
     <ver>4.2</ver>
     <ver>4.3</ver>
     <ver>4.4</ver>
+    <ver>4.5</ver>
   </compatibility>
   <comments>Based on an idea and initial code from Stoob and improved with Tim's suggestion to do it at the php instead of the js level. 
 </comments>

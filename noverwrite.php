@@ -18,7 +18,7 @@ function noverwrite_civicrm_buildForm ( $formName, &$form ){
   if (!$session->get('userID') && !array_key_exists("cs",$_GET)) {
     return; // anonymous user, nothing to bloc
   }
-  foreach (array( 'first_name', 'last_name') as $f) {
+  foreach (array( 'first_name', 'middle_name','last_name') as $f) {
     if (!$form->elementExists($f)) {
       continue;
     }

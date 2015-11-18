@@ -10,13 +10,14 @@
     <email>xavier@tttp.eu</email>
   </maintainer>
   <releaseDate>2014-04-21</releaseDate>
-  <version>1.22</version>
+  <version>1.23</version>
   <develStage>stable</develStage>
   <compatibility>
     <ver>4.2</ver>
     <ver>4.3</ver>
     <ver>4.4</ver>
     <ver>4.5</ver>
+    <ver>4.6</ver>
   </compatibility>
   <comments>Based on an idea and initial code from Stoob and improved with Tim's suggestion to do it at the php instead of the js level. 
 </comments>

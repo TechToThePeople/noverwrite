@@ -18,6 +18,13 @@ function noverwrite_civicrm_buildForm ( $formName, &$form ){
   if (!$session->get('userID') && !array_key_exists("cs",$_GET)) {
     return; // anonymous user, nothing to bloc
   }
+
+  // If admin user is using public form but contact_id has been set to 0
+  // I.e. after clicking the not me link.
+  if ($form->getContactID() == 0) {
+    return;
+  }
+
   foreach (array( 'first_name', 'middle_name','last_name') as $f) {
     if (!$form->elementExists($f)) {
       continue;

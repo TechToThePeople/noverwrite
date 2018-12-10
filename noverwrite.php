@@ -30,7 +30,7 @@ function noverwrite_civicrm_buildForm ( $formName, &$form ){
       continue;
     }
     $field=$form->getElement($f);
-    if ($field && $field->_attributes["value"])
+    if ($field)
       $form->freeze( $f );
   }
   // if you want to bloc it at the js level only, uncomment the next line and comment out the freeze

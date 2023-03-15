@@ -19,10 +19,19 @@ function noverwrite_civicrm_buildForm ( $formName, &$form ){
     return; // anonymous user, nothing to bloc
   }
 
-  // If admin user is using public form but contact_id has been set to 0
-  // I.e. after clicking the not me link.
-  if ($form->getContactID() == 0) {
-    return;
+  // Profiles have their own way of identifyign the relevant contact.
+  if ($formName == 'CRM_Profile_Form_Edit')  {
+    if (!($form->get('id'))) {
+      // If this is a profile, but the profile doesn't know its contactId
+      return;
+    }
+  }
+  // All other forms can use getContactId().
+  else {
+    // If admin user is using public form but contact_id has been set to 0
+    if ($form->getContactID() == 0) {
+     return;
+   }
   }
 
   foreach (array( 'first_name', 'middle_name','last_name') as $f) {

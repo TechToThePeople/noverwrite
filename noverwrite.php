@@ -2,11 +2,12 @@
 
 require_once 'noverwrite.civix.php';
 
-function noverwrite_civicrm_buildForm ( $formName, &$form ){
-  $names = array ("CRM_Profile_Form_Edit","CRM_Event_Form_Registration_Register","CRM_Contribute_Form_Contribution_Main");
+function noverwrite_civicrm_buildForm($formName, &$form) {
+  $names = ['CRM_Profile_Form_Edit','CRM_Event_Form_Registration_Register','CRM_Contribute_Form_Contribution_Main','CRM_Contact_Form_RelatedContact'];
 
-  if (!in_array ($formName, $names))
+  if (!in_array($formName, $names)) {
     return;
+  }
 
   // Don't invoke if we're using CiviMobile, since CiviMobile depends on users being able
   // to edit records via profiles.

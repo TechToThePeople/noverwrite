@@ -25,7 +25,15 @@
 </comments>
   <civix>
     <namespace>CRM/Noverwrite</namespace>
+    <format>23.02.1</format>
   </civix>
-<urls><url desc="Main Extension Page">http://github.com/TechToThePeople/noverwrite</url><url desc="Documentation">http://github.com/TechToThePeople/noverwrite</url><url desc="Support">http://forum.civicrm.org</url><url desc="Licensing">http://civicrm.org/licensing</url></urls>
-
+  <urls>
+    <url desc="Main Extension Page">http://github.com/TechToThePeople/noverwrite</url>
+    <url desc="Documentation">http://github.com/TechToThePeople/noverwrite</url>
+    <url desc="Support">http://forum.civicrm.org</url>
+    <url desc="Licensing">http://civicrm.org/licensing</url>
+  </urls>
+  <classloader>
+    <psr4 prefix="Civi\" path="Civi"/>
+  </classloader>
 </extension>

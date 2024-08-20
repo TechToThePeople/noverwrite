@@ -1,0 +1,5 @@
+{
+    "name": "civicrm/noverwrite",
+    "type": "civicrm-ext",
+    "description": "Makes the first and last name fields read only, to prevent users from accidentally overwriting their information when filling out publicly visible forms."
+}

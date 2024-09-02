@@ -9,8 +9,8 @@
     <author>Stoob (and packaged by xavier)</author>
     <email>xavier@tttp.eu</email>
   </maintainer>
-  <releaseDate>2023-03-15</releaseDate>
-  <version>2.0.1</version>
+  <releaseDate>2024-09-02</releaseDate>
+  <version>2.0.2</version>
   <develStage>stable</develStage>
   <compatibility>
     <ver>5.65</ver>

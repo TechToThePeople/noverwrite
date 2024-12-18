@@ -11,7 +11,7 @@ function noverwrite_civicrm_buildForm($formName, &$form) {
 
   // Don't invoke if we're using CiviMobile, since CiviMobile depends on users being able
   // to edit records via profiles.
-  $path = CRM_Utils_Array::value('HTTP_REFERER', $_SERVER);
+  $path = CRM_Utils_Array::value('HTTP_REFERER', $_SERVER, "");
   if($formName == 'CRM_Profile_Form_Edit' && preg_match('#civicrm/mobile#', $path)) {
     return;
   }

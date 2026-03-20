@@ -19,7 +19,7 @@
 </comments>
   <civix>
     <namespace>CRM/Noverwrite</namespace>
-    <format>23.02.1</format>
+    <format>25.10.2</format>
   </civix>
   <urls>
     <url desc="Main Extension Page">http://github.com/TechToThePeople/noverwrite</url>
@@ -30,4 +30,7 @@
   <classloader>
     <psr4 prefix="Civi\" path="Civi"/>
   </classloader>
+  <mixins>
+    <mixin>scan-classes@1.0.0</mixin>
+  </mixins>
 </extension>

@@ -35,7 +35,7 @@ function noverwrite_civicrm_buildForm($formName, &$form) {
    }
   }
 
-  foreach (array( 'first_name', 'middle_name','last_name') as $f) {
+  foreach ([ 'first_name', 'middle_name','last_name'] as $f) {
     if (!$form->elementExists($f)) {
       continue;
     }
